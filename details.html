@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+    <h3>Thankyou <span id="title"></span> <span id="first_name"></span> <span id="last_name"> </span></h3>
+    <h5>You have submitted the following details:</h5>
+    <div>Date Of Birth: <span id="DOB"></span></div>
+    <div>Telephone: <span id="tel"></span></div>
+    <div>File Uploaded: <span id="Files"></span></div>
+    <div>Message: <span id="Messages"></span></div>
+    <script>
+        document.getElementById("first_name").innerHTML=localStorage.getItem("textvalue1");
+        document.getElementById("last_name").innerHTML=localStorage.getItem("textvalue2");
+        document.getElementById("DOB").innerHTML=localStorage.getItem("textvalue3");
+        document.getElementById("tel").innerHTML=localStorage.getItem("textvalue4");
+        document.getElementById("Files").innerHTML=localStorage.getItem("textvalue5");
+        document.getElementById("Messages").innerHTML=localStorage.getItem("textvalue6");
+        document.getElementById("title").innerHTML=localStorage.getItem("textvalue7");
+    </script>
+</body>
+</html>

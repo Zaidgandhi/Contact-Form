@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Contact form</title>
+    <link rel="stylesheet" href="MyStyle.css">
+    <script type="text/javascript" src="validation.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h3>Contact Us</h3>
+        <form name="form" onsubmit="(Validate() && ValidateEmail())" action="details.html">
+            <label for="title">Title* <select Title="dropdown" size="1" id="title">
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Ms">Ms</option>
+        </select></label><br><br>
+            <label for="first_name">First Name*</label><br><input type="text" name="Firstname" id="firstname" required placeholder=""><br>
+            <label for="last_name">Last Name*</label><br><input type="text" name="Lastname" id="lastname" required placeholder=""><br>
+            <label for="DOB">Date of Birth </label><br><input type="date" id="Date" required><br>
+            <label for="Telephone">Telephone*</label><br><input type="text" maxlength="10" pattern="[1-9]{1}[1-9]{9}" id="phone" name="phone" required placeholder=""><br>
+            <label for="file_upload">File upload</label><br><input type="file" id="myFile" name="filename" required><br><br>
+            <label for="email">Email*</label><br> <input type="text" name="email" id="email" required placeholder=""><br>
+            <label for="message">Message</label><br><textarea name="message" rows="6" cols="25" id="message"></textarea><br>
+            <button class="button" onclick="values()"><input type="submit" id="btn"></button>
+            <button class="button"><input type="reset" id="btn" onclick="Reset()"></button>
+        </form>
+    </div>
+    <script>
+        function values() {
+            var title = document.getElementById("title").value;
+            var full_Name = document.getElementById("firstname").value;
+            var user_Name = document.getElementById("lastname").value;
+            var date1 = document.getElementById("Date").value;
+            var Phone_no = document.getElementById("phone").value;
+            var files = document.getElementById("myFile").value;
+            var message = document.getElementById("message").value;
+            localStorage.setItem("textvalue1", full_Name);
+            localStorage.setItem("textvalue2", user_Name);
+            localStorage.setItem("textvalue3", date1);
+            localStorage.setItem("textvalue4", Phone_no);
+            localStorage.setItem("textvalue5", files);
+            localStorage.setItem("textvalue6", message);
+            localStorage.setItem("textvalue7", title);
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
